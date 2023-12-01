@@ -39,20 +39,10 @@ cvcCardInput.oninput = function () {
 function formValidation() {
   //wrong format
   //cant be blank
-    if (cardNameInput.value === "") {
-      console.log("shes a pig")
-  }
 }
 
 function confirmForm() {
   formValidation();
-  form.style.display = "none";
-  completedState.style.display = "flex"
+  //form.style.display = "none";
+  //completedState.style.display = "flex"
 }
-
-//Fill in the form and see the card details update in real-time*
-//- Receive error messages when the form is submitted if:
-  //- Any input field is empty
- // - The card number, expiry date, or CVC fields are in the wrong format
-//- View the optimal layout depending on their device's screen size*
-//- See hover, active, and focus states for interactive elements on the page*
