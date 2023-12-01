@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <style></style>
+  </head>
+
+  <body>
+    <main>
+      <div class="card-wrapper">
+        <!--back card container with a position of relative-->
+        <div class="card card-back">
+          <!--back card image background with a position of relative-->
+          <img src="/images/bg-card-back.png" class="card-back-bg" alt="" />
+
+          <!--back card image text container with a position of absolute-->
+          <div class="card-text card-text-back">
+            <p id="cvc-number-display">000</p>
+          </div>
+        </div>
+
+        <!--front card container with a position of relative-->
+        <div class="card card-front">
+          <!--front card image background with a position of relative-->
+          <img src="/images/bg-card-front.png" class="card-bg" alt="" />
+
+          <!--front card image text container with a position of absolute-->
+          <div class="card-text card-text-front">
+            <img src="/images/card-logo.svg" class="card-logo" alt="" />
+            <div class="card-details">
+              <p id="card-number-display">0000 0000 0000 0000</p>
+              <div class="name-date">
+                <p id="card-name-display">Jane Appleseed</p>
+                <p id="expDateDisplay">
+                  <span id="month-display">00</span>/<span id="year-display"
+                    >00</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="form-wrapper">
+        <form action="#" method="post" id="form">
+          <!--name-->
+          <label for="cardNameInput">Cardholder Name</label>
+          <input
+            type="text"
+            id="cardNameInput"
+            placeholder="e.g. Jane Appleseed"
+            required=""
+            maxlength="25"
+          />
+          <!--number-->
+          <label for="cardNumberInput">Card Number</label>
+          <input
+            type="text"
+            id="cardNumberInput"
+            placeholder="e.g. 1234 5678 9123 0000"
+            required=""
+            maxlength="16"
+            minlength="16"
+          />
+          <!--date and cvc-->
+          <div class="date-cvc">
+            <!--expiry Date-->
+            <div class="date">
+              <label for="month-year">exp. date (mm/yy)</label>
+              <div class="month-year" id="month-year">
+                <input
+                  id="monthInput"
+                  type="text"
+                  placeholder="MM"
+                  required=""
+                  maxlength="2"
+                  minlength="2"
+                />
+                <input
+                  type="text"
+                  id="yearInput"
+                  placeholder="YY"
+                  required=""
+                  maxlength="2"
+                  minlength="2"
+                />
+              </div>
+            </div>
+            <!--cvc-->
+            <div class="cvc">
+              <label for="cvcCardInput">cvc</label>
+              <input
+                type="text"
+                id="cvcCardInput"
+                placeholder="e.g. 123"
+                required=""
+                maxlength="3"
+                minlength="3"
+              />
+            </div>
+          </div>
+
+          <button id="confirm-btn" onclick="confirmForm()">Confirm</button>
+        </form>
+      </div>
+
+      <div id="completed-state">
+        <img src="/images/icon-complete.svg" alt="" />
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+        <button>Continue</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
